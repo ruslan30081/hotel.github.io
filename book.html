@@ -6,8 +6,11 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20220325090303">
+	<link rel="stylesheet" href="css/style.min.css?_v=20220325160651">
 	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css?_v=20220325160651">
+	<script src="https://code.jquery.com/jquery-1.12.4.js?_v=20220325160651"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js?_v=20220325160651"></script>
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -20,17 +23,17 @@
 					<div class="header__container">
 						<div class="header__body">
 							<div class="header__wrap">
-								<a href="index.html">
+								<a href="../index.html">
 									<img src="img/icons/logo2.svg" alt="">
 								</a>
-								<a href="book.html" class="header__booking">Забронировать</a>
+								<a href="../book.html" class="header__booking">Забронировать</a>
 							</div>
 							<a href="#" class="header__auth">войти</a>
 						</div>
 					</div>
 				</header>
 				<div class="book__container _container">
-					<div class="book__body-booking booking">
+					<form action="#" method="get" class="book__body-booking booking">
 						<div class="booking__article">
 							<p class="booking__title">ЗАБРОНИРОВАТЬ</p>
 							<div class="booking__descript">
@@ -44,16 +47,37 @@
 							<option value="2">Номер 2</option>
 							<option value="3">Номер 3</option>
 						</select>
-						<input class="input booking__date" autocomplete="off" type="date" name="form[]" data-error="Ошибка" placeholder="">
-						<input class="input booking__date" autocomplete="off" type="date" name="form[]" data-error="Ошибка" placeholder="">
+
+						<input class="hasDatepicker" placeholder="Дата заезда" type="text" id="from" name="from">
+						<input class="hasDatepicker" placeholder="Дата выезда" type="text" id="to" name="to">
+
 						<div class="booking__persons">
 							<p class="booking__count-persons"><span>1</span> Гость</p>
 							<img class="booking__arrow-up" src="img/icons/Arrow-top.svg" alt="">
+							<div class="booking__show-body">
+								<!-- тут функционал добавления -->
+								<div class="booking__parents">
+									<p>Взрослых:</p>
+									<div class="booking__wrap-pers">
+										<div class="booking__btn-Remove">-</div>
+										<p class="booking__counts">1</p>
+										<div class="booking__btn-Add">+</div>
+									</div>
+								</div>
+								<div class="booking__childrens">
+									<p>Детей: </p>
+									<div class="booking__wrap-pers">
+										<div class="booking__btn-Remove">-</div>
+										<p class="booking__counts">0</p>
+										<div class="booking__btn-Add">+</div>
+									</div>
+								</div>
+							</div>
 						</div>
-						<div class="booking__search-number">
+						<button type="submit" class="booking__search-number">
 							<p class="booking__search-text">Найти номер</p>
-						</div>
-					</div>
+						</button>
+					</form>
 
 					<div class="book__items">
 						<!-- тут будет генерироваться новые номера отеля -->
@@ -175,7 +199,7 @@
 </div>
  -->
 
-	<script src="js/app.min.js?_v=20220325090303"></script>
+	<script src="js/app.min.js?_v=20220325160651"></script>
 </body>
 
 </html>
